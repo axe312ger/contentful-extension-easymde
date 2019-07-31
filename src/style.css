@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+}
+
+.CodeMirror {
+    max-height: 400px;
+}
+
+.CodeMirror.CodeMirror-fullscreen {
+    max-height: none;
+}
