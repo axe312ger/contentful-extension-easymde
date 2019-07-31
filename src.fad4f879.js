@@ -89,4 +89,4 @@ var i=require("./isObject"),t=require("./now"),r=require("./toNumber"),n="Expect
 },{"./isObject":"u9vI","./now":"0pJf","./toNumber":"iS0Z"}],"Focm":[function(require,module,exports) {
 "use strict";var e=require("contentful-ui-extensions-sdk"),n=u(require("easymde")),t=u(require("lodash/debounce"));function u(e){return e&&e.__esModule?e:{default:e}}require("easymde/dist/easymde.min.css"),require("./style.css"),(0,e.init)(function(e){console.log(e);var u=document.getElementById("editor"),r=e.field.getValue();r&&(u.innerHTML=r);var o=(0,t.default)(function(){e.field.setValue(i.value())},200),i=new n.default({element:u,onToggleFullScreen:function(e){if(!e)return document.exitFullscreen();document.documentElement.requestFullscreen()}});i.codemirror.on("change",o),i.codemirror.on("focus",function(){e.window.startAutoResizer()})});
 },{"contentful-ui-extensions-sdk":"cra/","easymde":"TIrk","lodash/debounce":"CXfR","easymde/dist/easymde.min.css":"f88W","./style.css":"f88W"}]},{},["Focm"], null)
-//# sourceMappingURL=contentful-extension-easymde/src.fad4f879.js.map
+//# sourceMappingURL=/contentful-extension-easymde/src.fad4f879.js.map
