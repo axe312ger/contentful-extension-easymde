@@ -1,11 +1,17 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('./Inter-Regular.woff2');
+}
+
 body {
-    margin: 0;
+  font-family: Inter, sans-serif;
+  margin: 0;
 }
 
 .CodeMirror {
-    max-height: 400px;
+  max-height: 400px;
 }
 
 .CodeMirror.CodeMirror-fullscreen {
-    max-height: none;
+  max-height: none;
 }
