@@ -12338,9 +12338,9 @@ CodeMirror.defineMode("gfm", function(config, modeConfig) {
   CodeMirror.defineMIME("text/x-gfm", "gfm");
 });
 
-},{"../../lib/codemirror":"../node_modules/codemirror/lib/codemirror.js","../markdown/markdown":"../node_modules/codemirror/mode/markdown/markdown.js","../../addon/mode/overlay":"../node_modules/codemirror/addon/mode/overlay.js"}],"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/src/builtins/_empty.js":[function(require,module,exports) {
+},{"../../lib/codemirror":"../node_modules/codemirror/lib/codemirror.js","../markdown/markdown":"../node_modules/codemirror/mode/markdown/markdown.js","../../addon/mode/overlay":"../node_modules/codemirror/addon/mode/overlay.js"}],"../node_modules/parcel/src/builtins/_empty.js":[function(require,module,exports) {
 
-},{}],"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js":[function(require,module,exports) {
+},{}],"../node_modules/base64-js/index.js":[function(require,module,exports) {
 'use strict'
 
 exports.byteLength = byteLength
@@ -12493,7 +12493,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js":[function(require,module,exports) {
+},{}],"../node_modules/ieee754/index.js":[function(require,module,exports) {
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = (nBytes * 8) - mLen - 1
@@ -12579,14 +12579,14 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/node_modules/isarray/index.js":[function(require,module,exports) {
+},{}],"../node_modules/isarray/index.js":[function(require,module,exports) {
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/node_modules/buffer/index.js":[function(require,module,exports) {
+},{}],"../node_modules/buffer/index.js":[function(require,module,exports) {
 
 var global = arguments[3];
 /*!
@@ -14379,7 +14379,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js","ieee754":"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js","isarray":"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/node_modules/isarray/index.js","buffer":"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../node_modules/typo-js/typo.js":[function(require,module,exports) {
+},{"base64-js":"../node_modules/base64-js/index.js","ieee754":"../node_modules/ieee754/index.js","isarray":"../node_modules/isarray/index.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/typo-js/typo.js":[function(require,module,exports) {
 var __dirname = "/home/bene/dev/opensource/contentful-extension-easymde/node_modules/typo-js";
 var Buffer = require("buffer").Buffer;
 /* globals chrome: false */
@@ -15313,7 +15313,7 @@ Typo.prototype = {
 if (typeof module !== 'undefined') {
 	module.exports = Typo;
 }
-},{"fs":"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/src/builtins/_empty.js","buffer":"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../node_modules/codemirror-spell-checker/src/js/spell-checker.js":[function(require,module,exports) {
+},{"fs":"../node_modules/parcel/src/builtins/_empty.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/codemirror-spell-checker/src/js/spell-checker.js":[function(require,module,exports) {
 // Use strict mode (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 "use strict";
 
@@ -19750,7 +19750,7 @@ function debounce(func, wait, options) {
 
 module.exports = debounce;
 
-},{"./isObject":"../node_modules/lodash/isObject.js","./now":"../node_modules/lodash/now.js","./toNumber":"../node_modules/lodash/toNumber.js"}],"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./isObject":"../node_modules/lodash/isObject.js","./now":"../node_modules/lodash/now.js","./toNumber":"../node_modules/lodash/toNumber.js"}],"../node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -19782,7 +19782,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -19817,18 +19817,18 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/easymde/dist/easymde.min.css":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel/src/builtins/bundle-url.js"}],"../node_modules/easymde/dist/easymde.min.css":[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"style.css":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel/src/builtins/css-loader.js"}],"style.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"./Inter-Regular.woff2":[["Inter-Regular.92ba6285.woff2","Inter-Regular.woff2"],"Inter-Regular.woff2"],"_css_loader":"../node_modules/parcel/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _contentfulUiExtensionsSdk = require("contentful-ui-extensions-sdk");
@@ -19870,7 +19870,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     extension.window.startAutoResizer();
   });
 });
-},{"contentful-ui-extensions-sdk":"../node_modules/contentful-ui-extensions-sdk/dist/cf-extension-api.js","easymde":"../node_modules/easymde/src/js/easymde.js","lodash/debounce":"../node_modules/lodash/debounce.js","easymde/dist/easymde.min.css":"../node_modules/easymde/dist/easymde.min.css","./style.css":"style.css"}],"../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"contentful-ui-extensions-sdk":"../node_modules/contentful-ui-extensions-sdk/dist/cf-extension-api.js","easymde":"../node_modules/easymde/src/js/easymde.js","lodash/debounce":"../node_modules/lodash/debounce.js","easymde/dist/easymde.min.css":"../node_modules/easymde/dist/easymde.min.css","./style.css":"style.css"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -19898,7 +19898,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43647" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34493" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -20073,5 +20073,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../.nvm/versions/node/v12.7.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../node_modules/parcel/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/src.e31bb0bc.js.map
