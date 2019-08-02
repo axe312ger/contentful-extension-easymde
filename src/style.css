@@ -5,6 +5,7 @@
 
 body {
   font-family: Inter, sans-serif;
+  font-feature-settings: 'ss01' 1, 'ss02' 1;
   margin: 0;
 }
 
