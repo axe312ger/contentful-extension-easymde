@@ -24,7 +24,19 @@ initContentfulExtension(extension => {
       if (!isFullscreen) {
         return document.exitFullscreen()
       }
-      document.documentElement.requestFullscreen()
+      const doc = document.documentElement
+      if (doc.requestFullscreen) {
+        doc.requestFullscreen()
+      } else if (doc.mozRequestFullScreen) {
+        /* Firefox */
+        doc.mozRequestFullScreen()
+      } else if (doc.webkitRequestFullscreen) {
+        /* Chrome, Safari and Opera */
+        doc.webkitRequestFullscreen()
+      } else if (doc.msRequestFullscreen) {
+        /* IE/Edge */
+        doc.msRequestFullscreen()
+      }
     },
   })
 
