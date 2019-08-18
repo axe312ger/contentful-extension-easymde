@@ -14380,7 +14380,7 @@ function isnan (val) {
 }
 
 },{"base64-js":"../node_modules/base64-js/index.js","ieee754":"../node_modules/ieee754/index.js","isarray":"../node_modules/isarray/index.js","buffer":"../node_modules/buffer/index.js"}],"../node_modules/typo-js/typo.js":[function(require,module,exports) {
-var __dirname = "/home/bene/dev/opensource/contentful-extension-easymde/node_modules/typo-js";
+var __dirname = "/Users/bene/dev/opensource/contentful-extension-easymde/node_modules/typo-js";
 var Buffer = require("buffer").Buffer;
 /* globals chrome: false */
 /* globals __dirname: false */
@@ -19843,17 +19843,26 @@ require("./style.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var trimContent = function trimContent(content) {
+  return content.replace(/^\s+$/gm, '').trim();
+};
+
 (0, _contentfulUiExtensionsSdk.init)(function (extension) {
-  console.log(extension);
   var editor = document.getElementById('editor');
   var initialValue = extension.field.getValue();
+  var lastValue;
 
   if (initialValue) {
     editor.innerHTML = initialValue;
   }
 
   var updateFieldValue = (0, _debounce.default)(function () {
-    extension.field.setValue(easyMDE.value());
+    var trimmedValue = trimContent(easyMDE.value());
+
+    if (trimmedValue !== lastValue) {
+      extension.field.setValue(trimmedValue);
+      lastValue = trimmedValue;
+    }
   }, 200);
   var easyMDE = new _easymde.default({
     element: editor,
@@ -19862,12 +19871,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         return document.exitFullscreen();
       }
 
-      document.documentElement.requestFullscreen();
+      var doc = document.documentElement;
+
+      if (doc.requestFullscreen) {
+        doc.requestFullscreen();
+      } else if (doc.mozRequestFullScreen) {
+        /* Firefox */
+        doc.mozRequestFullScreen();
+      } else if (doc.webkitRequestFullscreen) {
+        /* Chrome, Safari and Opera */
+        doc.webkitRequestFullscreen();
+      } else if (doc.msRequestFullscreen) {
+        /* IE/Edge */
+        doc.msRequestFullscreen();
+      }
     }
   });
   easyMDE.codemirror.on('change', updateFieldValue);
   easyMDE.codemirror.on('focus', function () {
     extension.window.startAutoResizer();
+  });
+  easyMDE.codemirror.on('blur', function (e) {
+    var trimmedContent = trimContent(easyMDE.value());
+    easyMDE.codemirror.doc.setValue(trimmedContent);
   });
 });
 },{"contentful-ui-extensions-sdk":"../node_modules/contentful-ui-extensions-sdk/dist/cf-extension-api.js","easymde":"../node_modules/easymde/src/js/easymde.js","lodash/debounce":"../node_modules/lodash/debounce.js","easymde/dist/easymde.min.css":"../node_modules/easymde/dist/easymde.min.css","./style.css":"style.css"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -19898,7 +19924,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34493" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54922" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
