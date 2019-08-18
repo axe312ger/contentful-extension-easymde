@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
     "deploy": "npm run build -- --public-url '/contentful-extension-easymde' && gh-pages -d dist"
   },
