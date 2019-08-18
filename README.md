@@ -10,8 +10,8 @@ Integrates the [EasyMDE markdown editor](https://easymde.tk/) as [extension into
 * Side by side preview
 * Full screen editing
 * Hotkeys like <kbd>Tab</kbd> for indent, <kbd>Shift</kbd> + <kbd>Tab</kbd> for outdent
+* Automatically trims spaces from empty lines to avoid confusing the MDX renderer
 * Upcoming: Editor markdown cheat sheet
-* Upcoming: Automatically trims spaces from empty lines to avoid confusing the MDX renderer
 * Upcoming: Contentful asset selector / listing
 
 ## Quick Install

@@ -5,17 +5,23 @@ import debounce from 'lodash/debounce'
 import 'easymde/dist/easymde.min.css'
 import './style.css'
 
+const trimContent = content => content.replace(/^\s+$/gm, '').trim()
+
 initContentfulExtension(extension => {
-  console.log(extension)
   const editor = document.getElementById('editor')
   const initialValue = extension.field.getValue()
+  let lastValue
 
   if (initialValue) {
     editor.innerHTML = initialValue
   }
 
   const updateFieldValue = debounce(() => {
-    extension.field.setValue(easyMDE.value())
+    const trimmedValue = trimContent(easyMDE.value())
+    if (trimmedValue !== lastValue) {
+      extension.field.setValue(trimmedValue)
+      lastValue = trimmedValue
+    }
   }, 200)
 
   const easyMDE = new EasyMDE({
@@ -44,5 +50,10 @@ initContentfulExtension(extension => {
 
   easyMDE.codemirror.on('focus', () => {
     extension.window.startAutoResizer()
+  })
+
+  easyMDE.codemirror.on('blur', e => {
+    const trimmedContent = trimContent(easyMDE.value())
+    easyMDE.codemirror.doc.setValue(trimmedContent)
   })
 })
