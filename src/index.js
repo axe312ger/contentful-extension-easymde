@@ -26,6 +26,10 @@ initContentfulExtension(extension => {
 
   const easyMDE = new EasyMDE({
     element: editor,
+    autofocus: false,
+    lineWrapping: false,
+    minHeight: '500px',
+    spellChecker: false,
     onToggleFullScreen: isFullscreen => {
       if (!isFullscreen) {
         return document.exitFullscreen()
