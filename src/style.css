@@ -30,7 +30,7 @@ body {
 
 #status.show {
   opacity: 1;
-  transition: .15s opacity ease-in;
+  transition: 0.15s opacity ease-in;
 }
 
 #error {
@@ -45,5 +45,9 @@ body {
   border: 4px dashed tomato;
   color: white;
   transition: 0.3s opacity ease;
+  opacity: 0;
+  pointer-events: none;
+}
+#error.show {
   opacity: 0;
 }

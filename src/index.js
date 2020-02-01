@@ -35,13 +35,13 @@ initContentfulExtension(extension => {
           .then(() => {
             extension.field.setValue(trimmedValue)
             lastValue = trimmedValue
-            error.style.opacity = 0
+            error.classList.remove('show')
             updateStatus('✅')
           })
           .catch(e => {
             console.error(e)
+            error.classList.add('show')
             error.innerText = e.message
-            error.style.opacity = 1
             updateStatus('💔')
           })
       }
