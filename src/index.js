@@ -1,6 +1,7 @@
 import { init as initContentfulExtension } from 'contentful-ui-extensions-sdk'
 import EasyMDE from 'easymde'
 import debounce from 'lodash/debounce'
+import mdx from '@mdx-js/mdx'
 
 import 'easymde/dist/easymde.min.css'
 import './style.css'
@@ -9,6 +10,8 @@ const trimContent = content => content.replace(/^\s+$/gm, '').trim()
 
 initContentfulExtension(extension => {
   const editor = document.getElementById('editor')
+  const error = document.getElementById('error')
+  const status = document.getElementById('status')
   const initialValue = extension.field.getValue()
   let lastValue
 
@@ -16,11 +19,31 @@ initContentfulExtension(extension => {
     editor.innerHTML = initialValue
   }
 
+  function updateStatus(value) {
+    status.classList.add('show')
+    status.innerText = value
+    setTimeout(() => status.classList.remove('show'), 5000)
+  }
+
   const updateFieldValue = debounce(() => {
     const trimmedValue = trimContent(easyMDE.value())
     if (trimmedValue !== lastValue) {
-      extension.field.setValue(trimmedValue)
-      lastValue = trimmedValue
+      updateStatus('🕵️‍♀️')
+
+      mdx(trimmedValue)
+        .then(() => {
+          extension.field.setValue(trimmedValue)
+          lastValue = trimmedValue
+          error.innerText = null
+          updateStatus('✅')
+          error.style.opacity = 0
+        })
+        .catch(e => {
+          console.error(e)
+          error.innerText = e.message
+          error.style.opacity = 1
+          updateStatus('💔')
+        })
     }
   }, 200)
 

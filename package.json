@@ -1,6 +1,6 @@
 {
   "name": "contentful-extension-easymde",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,11 @@
     "type": "git",
     "url": "https://github.com/axe312ger/contentful-extension-easymde"
   },
+  "browserslist": [
+    "last 1 Chrome versions"
+  ],
   "dependencies": {
+    "@mdx-js/mdx": "^1.5.5",
     "contentful-ui-extensions-sdk": "^3.9.1",
     "easymde": "^2.7.0",
     "gh-pages": "^2.0.1",

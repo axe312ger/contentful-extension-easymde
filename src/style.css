@@ -16,3 +16,34 @@ body {
 .CodeMirror.CodeMirror-fullscreen {
   max-height: none;
 }
+
+#status {
+  position: fixed;
+  z-index: 999;
+  top: 8px;
+  right: 10px;
+  line-height: 30px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 1s opacity ease-out;
+}
+
+#status.show {
+  opacity: 1;
+  transition: .15s opacity ease-in;
+}
+
+#error {
+  position: absolute;
+  font-family: monospace;
+  z-index: 999;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  background: firebrick;
+  border: 4px dashed tomato;
+  color: white;
+  transition: 0.3s opacity ease;
+  opacity: 0;
+}
