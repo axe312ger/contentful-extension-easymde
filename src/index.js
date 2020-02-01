@@ -25,27 +25,30 @@ initContentfulExtension(extension => {
     setTimeout(() => status.classList.remove('show'), 5000)
   }
 
-  const updateFieldValue = debounce(() => {
-    const trimmedValue = trimContent(easyMDE.value())
-    if (trimmedValue !== lastValue) {
-      updateStatus('🕵️‍♀️')
+  const updateFieldValue = debounce(
+    () => {
+      const trimmedValue = trimContent(easyMDE.value())
+      if (trimmedValue !== lastValue) {
+        updateStatus('🕵️‍♀️')
 
-      mdx(trimmedValue)
-        .then(() => {
-          extension.field.setValue(trimmedValue)
-          lastValue = trimmedValue
-          error.innerText = null
-          updateStatus('✅')
-          error.style.opacity = 0
-        })
-        .catch(e => {
-          console.error(e)
-          error.innerText = e.message
-          error.style.opacity = 1
-          updateStatus('💔')
-        })
-    }
-  }, 200)
+        mdx(trimmedValue)
+          .then(() => {
+            extension.field.setValue(trimmedValue)
+            lastValue = trimmedValue
+            error.style.opacity = 0
+            updateStatus('✅')
+          })
+          .catch(e => {
+            console.error(e)
+            error.innerText = e.message
+            error.style.opacity = 1
+            updateStatus('💔')
+          })
+      }
+    },
+    200,
+    { leading: true }
+  )
 
   const easyMDE = new EasyMDE({
     element: editor,
