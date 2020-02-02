@@ -33,6 +33,7 @@ initContentfulExtension(extension => {
 
         mdx(trimmedValue)
           .then(() => {
+            extension.field.setInvalid(false)
             extension.field.setValue(trimmedValue)
             lastValue = trimmedValue
             error.classList.remove('show')
@@ -40,6 +41,7 @@ initContentfulExtension(extension => {
           })
           .catch(e => {
             console.error(e)
+            extension.field.setInvalid(true)
             error.classList.add('show')
             error.innerText = e.message
             updateStatus('💔')

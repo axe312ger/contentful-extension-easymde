@@ -36,11 +36,13 @@ body {
 #error {
   position: absolute;
   font-family: monospace;
+  font-size: 0.85em;
   z-index: 999;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
-  padding: 1rem;
+  bottom: 4rem;
+  left: 2rem;
+  right: 2rem;
+  padding: 1em;
+  margin: 0;
   background: firebrick;
   border: 4px dashed tomato;
   color: white;
@@ -49,5 +51,5 @@ body {
   pointer-events: none;
 }
 #error.show {
-  opacity: 0;
+  opacity: 1;
 }
